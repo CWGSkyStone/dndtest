@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="dev.skystone.D20Controller"
+      prefWidth="720"
+      prefHeight="1080"
+      spacing="20"
+      style="-fx-background-color: #121212;">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <!-- TITLE -->
+    <Label text="D20 ROLLER"
+           style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;" />
+
+    <!-- MODIFIERS -->
+    <VBox spacing="10">
+        <Label text="Modifiers"
+               style="-fx-text-fill: #cccccc; -fx-font-size: 18px;" />
+
+        <CheckBox fx:id="advantageBox"
+                  text="Advantage"
+                  style="-fx-text-fill: white;" />
+
+        <CheckBox fx:id="disadvantageBox"
+                  text="Disadvantage"
+                  style="-fx-text-fill: white;" />
+
+        <CheckBox fx:id="inspirationBox"
+                  text="Inspiration"
+                  style="-fx-text-fill: white;" />
+    </VBox>
+
+    <!-- CRIT SETTINGS -->
+    <VBox spacing="10">
+        <Label text="Critical Settings"
+               style="-fx-text-fill: #cccccc; -fx-font-size: 18px;" />
+
+        <HBox spacing="10">
+            <Label text="Crit Success ≥"
+                   style="-fx-text-fill: white;" />
+            <TextField fx:id="critSuccessField"
+                       prefWidth="80"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Crit Failure ≤"
+                   style="-fx-text-fill: white;" />
+            <TextField fx:id="critFailField"
+                       prefWidth="80"/>
+        </HBox>
+    </VBox>
+
+    <!-- ROLL COUNT -->
+    <HBox spacing="10">
+        <Label text="Number of Rolls"
+               style="-fx-text-fill: white;" />
+
+        <TextField fx:id="rollCountField"
+                   prefWidth="80"
+                   text="1"/>
+    </HBox>
+
+    <!-- BUTTON -->
+    <Button text="ROLL D20"
+            onAction="#onRollClicked"
+            prefHeight="80"
+            style="
+                -fx-font-size: 22px;
+                -fx-font-weight: bold;
+                -fx-background-color: #ffcc00;
+                -fx-text-fill: black;
+            "/>
+
+    <!-- RESULTS -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <Label text="Results"
+               style="-fx-text-fill: #cccccc; -fx-font-size: 18px;" />
+
+        <TextArea fx:id="resultArea"
+                  editable="false"
+                  wrapText="true"
+                  VBox.vgrow="ALWAYS"
+                  style="
+                      -fx-text-fill: white;
+                      -fx-control-inner-background: #1e1e1e;
+                      -fx-font-size: 16px;
+                  "/>
+    </VBox>
+
+</VBox>
