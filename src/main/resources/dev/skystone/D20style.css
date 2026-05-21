@@ -1,0 +1,71 @@
+/* ================= ROOT ================= */
+.root {
+    -fx-background-color: #121212;
+}
+
+/* ================= TEXT ================= */
+.label {
+    -fx-text-fill: #dddddd;
+}
+
+/* ================= TEXT INPUTS ================= */
+.text-field, .text-area {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #e0e0e0;
+    -fx-border-color: #2a2a2a;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+}
+
+/* Focus effect (soft glow, not harsh) */
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #ffcc00;
+    -fx-effect: dropshadow(gaussian, rgba(255,204,0,0.25), 8, 0.3, 0, 0);
+}
+
+/* ================= TOGGLE BUTTONS ================= */
+.toggle-button {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #cccccc;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16;
+    -fx-font-size: 14px;
+}
+
+/* Hover */
+.toggle-button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+/* 🔥 ACTIVE STATE (this is the glow magic) */
+.toggle-button:selected {
+    -fx-background-color: #ffcc00;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+
+    /* Glow */
+    -fx-effect: dropshadow(gaussian, rgba(255,204,0,0.6), 15, 0.4, 0, 0);
+}
+
+/* Pressed */
+.toggle-button:pressed {
+    -fx-background-color: #e6b800;
+}
+
+/* ================= BUTTON ================= */
+.button {
+    -fx-background-color: #444;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+
+/* Roll button special (optional but nice) */
+.button:hover {
+    -fx-background-color: #555;
+}
+
+/* ================= TEXT AREA ================= */
+.text-area {
+    -fx-control-inner-background: #1a1a1a;
+}

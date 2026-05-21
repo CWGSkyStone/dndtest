@@ -1,8 +1,15 @@
 package dev.skystone;
 
-import java.util.List;
-
 public class D100Table {
-    public List<D100Event> success;
-    public List<D100Event> failure;
+
+    private CritTable melee;
+    private CritTable ranged;
+
+    public CritTable getMelee() {
+        return melee;
+    }
+
+    public CritTable getRanged() {
+        return ranged;
+    }
 }

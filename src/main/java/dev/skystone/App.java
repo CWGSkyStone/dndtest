@@ -34,7 +34,7 @@ public class App extends Application {
             setRoot(fxml);
         } catch (IOException e) {
             System.err.println(e.getMessage());
-            // e.printStackTrace();
+            e.printStackTrace();
         }
     }
 

@@ -1,14 +1,10 @@
 {
-  "success": [
-    { "min": 1, "max": 10, "text": "Legendary success + bonus effect" },
-    { "min": 11, "max": 30, "text": "Strong success + extra damage" },
-    { "min": 31, "max": 60, "text": "Clean success" },
-    { "min": 61, "max": 100, "text": "Basic success" }
-  ],
-  "failure": [
-    { "min": 1, "max": 10, "text": "Critical failure: weapon breaks" },
-    { "min": 11, "max": 30, "text": "You stumble and lose position" },
-    { "min": 31, "max": 60, "text": "Minor setback" },
-    { "min": 61, "max": 100, "text": "Failure with no extra effect" }
-  ]
+  "melee": {
+    "success": [ { "min": 1, "max": 100, "text": "Massive strike!" } ],
+    "failure": [ { "min": 1, "max": 100, "text": "You drop your weapon!" } ]
+  },
+  "ranged": {
+    "success": [ { "min": 1, "max": 100, "text": "Perfect shot!" } ],
+    "failure": [ { "min": 1, "max": 100, "text": "You hit an ally!" } ]
+  }
 }

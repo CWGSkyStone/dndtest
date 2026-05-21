@@ -10,7 +10,7 @@
       prefWidth="720"
       prefHeight="1080"
       spacing="20"
-      style="-fx-background-color: #121212;">
+      stylesheets="@D20style.css">
 
     <padding>
         <Insets top="30" right="30" bottom="30" left="30"/>
@@ -25,17 +25,24 @@
         <Label text="Modifiers"
                style="-fx-text-fill: #cccccc; -fx-font-size: 18px;" />
 
-        <CheckBox fx:id="advantageBox"
-                  text="Advantage"
-                  style="-fx-text-fill: white;" />
+        <ToggleButton fx:id="advantageToggle" text="Advantage"/>
+        <ToggleButton fx:id="disadvantageToggle" text="Disadvantage"/>
+        <ToggleButton fx:id="inspirationToggle" text="Inspiration Prompt"/>
+    </VBox>
 
-        <CheckBox fx:id="disadvantageBox"
-                  text="Disadvantage"
-                  style="-fx-text-fill: white;" />
+    <!-- ATTACK TYPE -->
+    <VBox spacing="10">
+        <Label text="Attack Type"
+               style="-fx-text-fill: #cccccc; -fx-font-size: 18px;" />
 
-        <CheckBox fx:id="inspirationBox"
-                  text="Inspiration"
-                  style="-fx-text-fill: white;" />
+        <RadioButton fx:id="meleeRadio"
+                     text="Melee"
+                     toggleGroup="$attackTypeGroup"
+                     selected="true"/>
+
+        <RadioButton fx:id="rangedRadio"
+                     text="Ranged"
+                     toggleGroup="$attackTypeGroup"/>
     </VBox>
 
     <!-- CRIT SETTINGS -->
@@ -44,55 +51,46 @@
                style="-fx-text-fill: #cccccc; -fx-font-size: 18px;" />
 
         <HBox spacing="10">
-            <Label text="Crit Success ≥"
-                   style="-fx-text-fill: white;" />
-            <TextField fx:id="critSuccessField"
-                       prefWidth="80"/>
+            <Label text="Crit Success ≥" style="-fx-text-fill: white;" />
+            <TextField fx:id="critSuccessField" prefWidth="80"/>
         </HBox>
 
         <HBox spacing="10">
-            <Label text="Crit Failure ≤"
-                   style="-fx-text-fill: white;" />
-            <TextField fx:id="critFailField"
-                       prefWidth="80"/>
+            <Label text="Crit Failure ≤" style="-fx-text-fill: white;" />
+            <TextField fx:id="critFailField" prefWidth="80"/>
         </HBox>
     </VBox>
 
     <!-- ROLL COUNT -->
     <HBox spacing="10">
-        <Label text="Number of Rolls"
-               style="-fx-text-fill: white;" />
-
-        <TextField fx:id="rollCountField"
-                   prefWidth="80"
-                   text="1"/>
+        <Label text="Roll Count" style="-fx-text-fill: white;" />
+        <TextField fx:id="rollCountField" prefWidth="80" text="1"/>
     </HBox>
 
     <!-- BUTTON -->
-    <Button text="ROLL D20"
+    <Button text="ROLL"
             onAction="#onRollClicked"
-            prefHeight="80"
-            style="
-                -fx-font-size: 22px;
-                -fx-font-weight: bold;
-                -fx-background-color: #ffcc00;
-                -fx-text-fill: black;
-            "/>
+            prefHeight="70"/>
+
+    <!-- INLINE PROMPT -->
+    <VBox fx:id="inspirationBox"
+          visible="false"
+          managed="false"
+          spacing="10"
+          style="-fx-background-color: #2a2a2a; -fx-padding: 15;">
+
+        <Label fx:id="inspirationLabel"/>
+
+        <HBox spacing="10">
+            <Button text="Use Inspiration" onAction="#onUseInspiration"/>
+            <Button text="Keep Roll" onAction="#onKeepRoll"/>
+        </HBox>
+    </VBox>
 
     <!-- RESULTS -->
-    <VBox spacing="10" VBox.vgrow="ALWAYS">
-        <Label text="Results"
-               style="-fx-text-fill: #cccccc; -fx-font-size: 18px;" />
-
-        <TextArea fx:id="resultArea"
-                  editable="false"
-                  wrapText="true"
-                  VBox.vgrow="ALWAYS"
-                  style="
-                      -fx-text-fill: white;
-                      -fx-control-inner-background: #1e1e1e;
-                      -fx-font-size: 16px;
-                  "/>
-    </VBox>
+    <TextArea fx:id="resultArea"
+              VBox.vgrow="ALWAYS"
+              editable="false"
+              wrapText="true"/>
 
 </VBox>
