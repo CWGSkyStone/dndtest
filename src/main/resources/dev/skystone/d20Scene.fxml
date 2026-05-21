@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ComboBox?>
 
 <VBox xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
@@ -43,6 +44,7 @@
         <RadioButton fx:id="rangedRadio"
                      text="Ranged"
                      toggleGroup="$attackTypeGroup"/>
+        <ComboBox fx:id="weaponBox" promptText="Select weapon"/>
     </VBox>
 
     <!-- CRIT SETTINGS -->

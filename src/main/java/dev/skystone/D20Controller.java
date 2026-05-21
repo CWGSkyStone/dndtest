@@ -1,6 +1,7 @@
 package dev.skystone;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -27,6 +28,9 @@ public class D20Controller {
     @FXML private VBox inspirationBox;
     @FXML private Label inspirationLabel;
 
+    @FXML
+    private ComboBox<Weapon> weaponBox;
+
     private final CalcRolls calcRolls = new CalcRolls();
     private final CalcCrits calcCrits = new CalcCrits();
 
@@ -50,6 +54,17 @@ public class D20Controller {
         critSuccessField.setText("20");
         critFailField.setText("1");
         rollCountField.setText("1");
+
+        weaponBox.getItems().addAll(
+                new Weapon("Sword", 1, 6, 0),
+                new Weapon("Sword", 1, 8, 0),
+                new Weapon("Sword", 1, 10, 0),
+                new Weapon("Sword", 1, 12, 0),
+                new Weapon("Sword", 1, 20, 0),
+                new Weapon("Sword", 2, 6, 0)
+        );
+
+        weaponBox.getSelectionModel().selectFirst();
     }
 
     @FXML

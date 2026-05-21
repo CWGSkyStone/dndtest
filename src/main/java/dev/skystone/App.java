@@ -17,7 +17,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         D100Loader.load();
-        scene = new Scene(loadFXML("mainScene"), 1080, 720);
+        scene = new Scene(loadFXML("d20Scene"), 1080, 720);
         stage.setTitle("Skystone");
         stage.setScene(scene);
         stage.show();
